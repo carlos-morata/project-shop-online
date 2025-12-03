@@ -1,17 +1,14 @@
-const userModels = require("../models/userModels");
+const userServices = require('../services/userServices');
 
 // Registro de Usuarios
 const createUser = async(req, res) => {
-
     try {
         const { username, email, password, rol = 'user' } = req.body;
+        const newUser = await userServices.createUser(username, email, password, rol);
 
-        if(!username || !email || !password) {
-            return res.status(400).json({ message: "Faltan datos obligatorios para registrar usuario." });
-        }
-       const newUser = await userModels.createUser(username, email, password, rol);
-       console.log("USUARIO REGISTRADO", newUser);
-       res.status(201).json({ message: "Usuario Registrado!", user: newUser });
+        console.log("USUARIO REGISTRADO", newUser);
+        res.status(201).json({ message: "Usuario Registrado!", user: newUser });
+        
     } catch(error) {
        res.status(500).json({ message: "Error en el servidor", error});
     }
