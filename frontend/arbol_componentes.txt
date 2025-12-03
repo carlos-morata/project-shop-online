@@ -1,0 +1,19 @@
+App.jsx 
+    Header.jsx
+        Navbar.jsx
+            Mujer.jsx
+                Camisetas.jsx
+                    ModeloCamiseta.jsx
+    Registro.jsx
+        FormularioRegistro.jsx
+    InicioSesion.jsx
+    Carrito.jsx
+    Main.jsx
+
+
+    Footer.jsx
+        Contacto.jsx
+            FormularioContacto.jsx
+        Redes.jsx
+        Legalidad.jsx
+        Derechos.jsx
