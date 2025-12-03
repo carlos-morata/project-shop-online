@@ -7,6 +7,7 @@ const queries = {
     loginUser:
         ` SELECT * FROM users
             WHERE email = $1 AND password = $2;`,
+    // Logout
     logoutUser:
         ` SELECT * FROM users
             WHERE email = $1 AND password = $2;`
