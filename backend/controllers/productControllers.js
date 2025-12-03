@@ -3,7 +3,7 @@ const productModels = require("../models/productModels");
 // Crear Producto
 const createProduct = async(req, res) => {
     try {
-        const { url_image, name, price, description, sizes, category, stock } = req. body;
+        const { url_image, name, price, description, sizes, category, stock } = req.body;
 
         if(!url_image || !name || !price || !description || !sizes || !category || !stock) {
             return res.status(400).json({ message: "Faltan datos obligatorios para crear un producto." });
