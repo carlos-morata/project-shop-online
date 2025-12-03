@@ -10,6 +10,10 @@ app.use(express.json());
 const userRoutes = require('./routes/userRoutes');
 app.use('/', userRoutes);
 
+// Importar Rutas de Productos
+const productRoutes = require('./routes/productRoutes');
+app.use('/', productRoutes);
+
 app.listen(port, () => {
   console.log(`Servidor backend -> http://localhost:${port}`)
 })

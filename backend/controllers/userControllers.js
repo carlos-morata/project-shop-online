@@ -1,6 +1,6 @@
 const userModels = require("../models/userModels");
 
-// Crear usuario
+// Registro de Usuarios
 const createUser = async(req, res) => {
 
     try {
@@ -17,6 +17,7 @@ const createUser = async(req, res) => {
     }
 }
 
+// Inicio de Sesión Usuarios
 const login = async(req, res) => {
     try {
         const { email, password } = req.body;
@@ -30,6 +31,7 @@ const login = async(req, res) => {
     }
 }
 
+// Cierre de Sesión Usuarios
 const logout = async(req, res) => {
     try {
         const { email, password } = req.body;
