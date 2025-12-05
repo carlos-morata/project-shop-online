@@ -1,6 +1,16 @@
 App.jsx 
     Header.jsx --> <header>
-        <Navbar /> ---> Barra de navegación / Menú hamburguesa
+        <Navbar> ---> Barra de navegación / Menú hamburguesa
+            NavList.jsx --> <NavList> --> Lista Generos
+                NavItem.jsx --> <NavItem> --> Items de Listas de Géneros (Mujer, Hogar, Ofertas)
+                    SubNavList.jsx --> <SubNavList> --> SubLista de Géneros
+                        SubNavItem.jsx --> <SubNavItem> --> Items de Sublista de Géneros (Camisetas, Abrigos, etc.)
+                            </SubNavItem>
+                    </SubNavList>
+                </NavItem> 
+            </NavList>
+        </Navbar>
+
         <FormSearch /> ---> Formulario de Buscar Producto
         <Icons /> ---> Icono Logotipo e Icono Usuario
         <CartWidget /> ---> Carrito de la compra
@@ -45,3 +55,10 @@ App.jsx
         </FooterLinks>
     </footer>
     ContactForm.jsx ---> <ContactForm /> --> Contacto
+
+-- CREACIÓN COMPONENTES --
+-- NavBar --
+    npx crcf src/components/Header/Navbar/NavbarList -j  --notest -f
+        npx crcf src/components/Header/Navbar/NavbarList/NavbarItem -j  --notest -f
+            npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList -j  --notest -f
+                npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList/SubNavbarItem -j  --notest -f
