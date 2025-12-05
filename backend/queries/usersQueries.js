@@ -7,6 +7,11 @@ const queries = {
     loginUser:
         ` SELECT * FROM users
             WHERE email = $1 AND password = $2;`,
+    // Autenticación Login
+    loginUserByEmail:
+        ` SELECT * FROM users
+            WHERE email = $1
+        `,
     // Logout
     logoutUser:
         ` SELECT * FROM users

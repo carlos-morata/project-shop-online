@@ -19,7 +19,7 @@ const login = async(req, res) => {
     try {
         const { email, password } = req.body;
         const loginUser = await userServices.logInServices(email, password);
-        res.status(201).json({ message: "Inicio de Sesión realizado con éxito!", user: loginUser });
+        res.status(200).json({ message: "Inicio de Sesión realizado con éxito!", user: loginUser });
     } catch(error) {
        res.status(500).json({ message: "Error en el servidor", error});
     }

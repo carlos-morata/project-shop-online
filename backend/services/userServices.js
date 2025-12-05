@@ -14,19 +14,26 @@ const createUser = async(username, email, password, rol = 'user') => {
 }
 
 const logInServices = async(email, password) => {
+    if(!email || !password) {
+        throw new Error("Correo y Contraseña incorrectos");
+    }
 
-    const loginUser = await userModels.loginModel(email, password);
-    if(!email || !password) return res.status(400).json({ message: "Email y Password incompletos" });
+    const resultLogin = await userModels.loginModel(email, password);
+    if(!resultLogin.rows[0]) {
+        throw new Error("Usuario no encontrado");
+    }
 
-    const validatePassword = await bcrypt.compare(password, user.password);
-    if(!validatePassword) return res.status(401).json({ message: "Credenciales incorrectas" });
+    const loginUser = resultLogin.rows[0];
+
+    const validatePassword = await bcrypt.compare(password, loginUser.password);
+    if(!validatePassword) {
+        throw new Error("Credenciales incorrectas");
+    }
 
     const token = jwt.sign(
-        {id: loginUser.user_id, email: user.email},
-        process.env.JWT_SECRET,
-        { expiresIn: '10 días' }
-    );
-    return { loginUser, token }
+        { userId: loginUser.user_id, email: loginUser.email, rol: loginUser.rol }, process.env.JWT_SECRET, { expiresIn: '7d' })
+
+    return { token, loginUser }
 }
 
 module.exports = {
