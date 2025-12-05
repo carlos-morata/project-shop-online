@@ -1,7 +1,10 @@
 import React from "react";
+import NavbarItem from './NavbarItem'
 
 const NavbarList = () => {
-  return <div>NavbarList</div>;
+  return <ul>
+    <NavbarItem />
+  </ul>;
 };
 
 export default NavbarList;

@@ -11,7 +11,7 @@ App.jsx
             </NavList>
         </Navbar>
 
-        <FormSearch /> ---> Formulario de Buscar Producto
+        <SearchProducts /> ---> Formulario de Buscar Producto
         <Icons /> ---> Icono Logotipo e Icono Usuario
         <CartWidget /> ---> Carrito de la compra
     </header>
@@ -57,8 +57,11 @@ App.jsx
     ContactForm.jsx ---> <ContactForm /> --> Contacto
 
 -- CREACIÓN COMPONENTES --
+-- HEADER --
+    npx crcf src/components/Header/Navbar -j  --notest -f
 -- NavBar --
     npx crcf src/components/Header/Navbar/NavbarList -j  --notest -f
         npx crcf src/components/Header/Navbar/NavbarList/NavbarItem -j  --notest -f
             npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList -j  --notest -f
                 npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList/SubNavbarItem -j  --notest -f
+    npx crcf src/components/Header/SearchProducts -j  --notest -f

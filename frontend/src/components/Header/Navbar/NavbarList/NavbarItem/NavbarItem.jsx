@@ -1,7 +1,10 @@
 import React from "react";
+import SubNavbarList from './SubNavbarList'
 
 const NavbarItem = () => {
-  return <div>NavbarItem</div>;
+  return <li>
+    <SubNavbarList />
+  </li>;
 };
 
 export default NavbarItem;
