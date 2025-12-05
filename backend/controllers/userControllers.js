@@ -18,11 +18,8 @@ const createUser = async(req, res) => {
 const login = async(req, res) => {
     try {
         const { email, password } = req.body;
-        if(!email || !password) {
-            return res.status(400).json({ message: "Email y Password incompletos" });
-        }
-        const loginUser = await userModels.loginModel(email, password);
-        res.status(201).json({ message: "Inicio de Sesión realizado con éxito!", user: loginUser });
+        const loginUser = await userServices.logInServices(email, password);
+        res.status(200).json({ message: "Inicio de Sesión realizado con éxito!", user: loginUser });
     } catch(error) {
        res.status(500).json({ message: "Error en el servidor", error});
     }

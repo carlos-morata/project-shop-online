@@ -15,12 +15,13 @@ const createUser = async (username, email, password, rol = 'user') => {
     }
 }
 
-const loginModel = async (email, password) => {
+// Iniciar Sesión -> [POST] /api/login
+const loginModel = async (email) => {
     try {
-        if(!email || !password) {
-            throw new Error('Email y Contraseña son Obligatorios');
+        if(!email) {
+            throw new Error('Email es obligatorio');
         }
-        const resultLogin = await pool.query(queries.loginUser, [ email, password ]);
+        const resultLogin = await pool.query(queries.loginUserByEmail, [ email ]);
         return resultLogin
     } catch(error) {
         console.error('Error al Iniciar Sesión: ', error.message);
