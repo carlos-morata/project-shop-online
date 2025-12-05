@@ -1,19 +1,47 @@
 App.jsx 
-    Header.jsx
-        Navbar.jsx
-            Mujer.jsx
-                Camisetas.jsx
-                    ModeloCamiseta.jsx
-    Registro.jsx
-        FormularioRegistro.jsx
-    InicioSesion.jsx
-    Carrito.jsx
-    Main.jsx
+    Header.jsx --> <header>
+        <Navbar /> ---> Barra de navegación / Menú hamburguesa
+        <FormSearch /> ---> Formulario de Buscar Producto
+        <Icons /> ---> Icono Logotipo e Icono Usuario
+        <CartWidget /> ---> Carrito de la compra
+    </header>
+    RegisterForm.jsx ---> <RegisterForm /> --> Registro de Usuario
+    
+    Main.jsx --> <main>
+        <HomePage> ---> Página Principal --> Ruta /home
+            <Img /> ---> Imagen
+            <Categories /> ---> Abrigos, Pantalones...
+            <AboutSection /> ---> Quiénes Somos
+        </HomePage>
 
+        <CategoryLanding> ---> Página Sección "Mujer" --> Ruta /:genero
+            <Img /> ---> Imagen
+            <Categories /> ---> Categorías Abrigos, etc...
+            <ProductsList />
+        </CategoryLanding>
 
-    Footer.jsx
-        Contacto.jsx
-            FormularioContacto.jsx
-        Redes.jsx
-        Legalidad.jsx
-        Derechos.jsx
+        <CategoryProduct> ---> Página Categoría "Abrigos" --> Ruta /:genero/:categoria (/mujer/abrigos)
+           <Filters /> ---> Filtros y Ordenación
+           <ProductsList> ---> Lista de Productos
+                <ProductCard /> ---> Cada Producto
+            </ProductsList>
+        </CategoryProduct>
+
+        <ProductDetail> ---> Página Producto --> Ruta /:genero/:categoria/:producto_id (mujer/abrigos/modeloAbrigo)
+            <ProductImg /> --> Imagen Del Producto
+            <ProductInfo /> --> Título, Precio, Descripción
+            <FormAddCart /> --> Tallas + Añadir al Carrito
+        </ProductDetail>
+
+        <LegalPage /> --> Página a Políticas Legales --> /legalidad
+        <AuthorPage /> --> Página a Derechos de Autor --> /creditos
+    </main>
+
+    Footer.jsx ---> <footer>
+        <FooterLinks> --> Enlaces a redes, legalidad, derechos
+            <SocialLinks /> --> Redes Sociales
+            <LegalLinks /> --> Políticas Legales
+            <Author /> --> Derechos de Autor
+        </FooterLinks>
+    </footer>
+    ContactForm.jsx ---> <ContactForm /> --> Contacto
