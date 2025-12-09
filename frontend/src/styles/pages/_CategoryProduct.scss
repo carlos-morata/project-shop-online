@@ -1,0 +1,17 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.products-container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    h1 {
+        font-size: variables.$title1;
+        text-align: center;
+        color: variables.$color;
+    }
+}

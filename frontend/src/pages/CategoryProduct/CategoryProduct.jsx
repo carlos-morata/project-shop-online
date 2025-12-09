@@ -17,13 +17,13 @@ const CategoryProduct = () => {
     };
     fetchProducts();
   }, [gender, category]);
-  return <section>
-    <h1>{category} para {gender}</h1>
+  return <section className="products-container">
+    <h1>{category} para {gender}es</h1>
 
     {products.length === 0 && <p>No hay productos disponibles</p>}
 
     {products.map((item) => ( 
-    <Link key={item.product_id} to={`/${gender}/${item.category.toLowerCase()}/${item.product_id}`}>
+    <Link key={item.product_id} to={`/${gender}/${item.category}/${item.product_id}`}>
     <section key={item.product_id}>
         <article key={item.product_id}>
           <img src={item.url_image} alt={item.name} />
