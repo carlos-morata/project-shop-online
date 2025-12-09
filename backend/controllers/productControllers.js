@@ -3,12 +3,12 @@ const productModels = require("../models/productModels");
 // Crear Producto
 const createProduct = async(req, res) => {
     try {
-        const { url_image, name, price, description, sizes, category, stock } = req.body;
+        const { url_image, name, price, description, sizes, category, stock, gender } = req.body;
 
-        if(!url_image || !name || !price || !description || !sizes || !category || !stock) {
+        if(!url_image || !name || !price || !description || !sizes || !category || !stock || !gender) {
             return res.status(400).json({ message: "Faltan datos obligatorios para crear un producto." });
         }
-        const newProduct = await productModels.createProductModel(url_image, name, price, description, sizes, category, stock);
+        const newProduct = await productModels.createProductModel(url_image, name, price, description, sizes, category, stock, gender);
         res.status(201).json({ message: "Producto Creado!", product: newProduct });
     } catch(error) {
        res.status(500).json({ message: "Error en el servidor", error});
@@ -26,7 +26,74 @@ const deleteProduct = async(req, res) => {
     }
 }
 
+const getByGender = async (req, res) => {
+    try {
+        const { gender } = req.params;
+        const products = await productModels.getByGenderModel(gender);
+
+        if(!products || products.length === 0) {
+            return res.status(404).json({ message: `No hay productos para ${gender}`});
+        }
+        res.status(200).json(products);
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+}
+
+const getCategoriesByGender = async (req, res) => {
+    try {
+        const { gender } = req.params;
+       const categories = await productModels.getCategoriesByGenderModel(gender);
+
+       if(categories.length === 0) {
+            return res.status(404).json({ message: `No se encuentran categorías`});
+       }
+
+       res.status(200).json(categories);
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+}
+
+const getProductsByGenAndCat = async (req, res) => {
+    try {
+        const { gender, category } = req.params;        
+        const products = await productModels.getProductsByGenAndCatModel(gender, category)
+
+        if(!products || !products.length === 0) {
+            return res.status(400).json({ message: "No se encuentran productos"});
+        }
+
+        res.status(200).json(products);
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+}
+
+const getProductById = async (req, res) => {
+    try {
+        const { gender, category, product_id } = req.params;
+        const product = await productModels.getProductByIdModel(gender, category, product_id);
+
+        if(!product) {
+            return res.status(400).json({ message: "No se encuentra el producto"});
+        }
+
+        res.status(200).json(product);
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+}
+
 module.exports = {
     createProduct,
-    deleteProduct
+    deleteProduct,
+    getByGender,
+    getCategoriesByGender,
+    getProductsByGenAndCat,
+    getProductById
 }

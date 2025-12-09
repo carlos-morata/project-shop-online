@@ -8,4 +8,16 @@ router.post('/api/product', productControllers.createProduct);
 // http://localhost:3000/api/product/2 -> Eliminar Producto - Administrador
 router.delete('/api/product/:product_id', productControllers.deleteProduct);
 
+// http://localhost:3000/genero/mujer
+router.get('/genero/:gender', productControllers.getByGender);
+
+// http://localhost:3000/categorias
+router.get('/categorias/:gender', productControllers.getCategoriesByGender);
+
+// http://localhost:3000/mujer/abrigos
+router.get('/:gender/:category', productControllers.getProductsByGenAndCat);
+
+// http://localhost:3000/mujer/abrigos/2
+router.get('/:gender/:category/:product_id', productControllers.getProductById);
+
 module.exports = router;
