@@ -1,0 +1,16 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100dvh;
+    box-sizing: variables.$border-box;
+
+    .main-container {
+        width: 100vw;
+        box-sizing: variables.$border-box;
+        margin-top: 160px;
+    }
+}

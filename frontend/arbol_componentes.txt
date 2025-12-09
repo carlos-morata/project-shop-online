@@ -48,20 +48,29 @@ App.jsx
     </main>
 
     Footer.jsx ---> <footer>
+    ContactForm.jsx ---> <ContactForm /> --> Contacto
         <FooterLinks> --> Enlaces a redes, legalidad, derechos
             <SocialLinks /> --> Redes Sociales
-            <LegalLinks /> --> Políticas Legales
-            <Author /> --> Derechos de Autor
+            <LegalPage /> --> Políticas Legales
+            <AuthorPage /> --> Derechos de Autor
         </FooterLinks>
     </footer>
-    ContactForm.jsx ---> <ContactForm /> --> Contacto
 
 -- CREACIÓN COMPONENTES --
--- HEADER --
-    npx crcf src/components/Header/Navbar -j  --notest -f
--- NavBar --
-    npx crcf src/components/Header/Navbar/NavbarList -j  --notest -f
-        npx crcf src/components/Header/Navbar/NavbarList/NavbarItem -j  --notest -f
-            npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList -j  --notest -f
-                npx crcf src/components/Header/Navbar/NavbarList/NavbarItem/SubNavbarList/SubNavbarItem -j  --notest -f
-    npx crcf src/components/Header/SearchProducts -j  --notest -f
+- src/
+    -- components/
+        -- common/
+            npx crcf src/components/common/
+        -- forms/
+            npx crcf src/components/forms/RegisterUser ContactForm -j --notest -f
+        -- layout/
+            -- Header/
+                npx crcf src/components/layout/Header/Nav ShoppingCart -j --notest -f
+                -- navigation/
+                    npx crcf src/components/layout/Header/navigation/ NavList NavItem SubNavList SubNavItem -j --notest -f
+            -- Footer/
+                npx crcf src/components/layout/Footer/FooterLinks SocialLinks -j --notest -f
+    -- pages/
+        npx crcf src/pages/HomePage CategoryLanding CategoryProduct ProductDetail LegalPage AuthorPage NotFoundPage -j --notest -f
+
+-- styles/

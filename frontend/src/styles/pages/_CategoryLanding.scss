@@ -1,0 +1,54 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.gender-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+
+    h1 {
+        font-size: variables.$title1;
+        text-align: center;
+        margin-top: 2px;
+    }
+
+    h1 + p {
+        @include mixins.box-shadow(variables.$border-color);
+        width: 95%;
+        font-size: variables.$text;
+        margin: 10px 0px;
+        padding: 3px;
+        box-sizing: variables.$border-box;
+        letter-spacing: variables.$letter-spacing;
+        text-align: center;
+    }
+
+    .btn-categories {
+        width: 95%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .btn-categories h2 {
+        text-align: center;
+        font-size: variables.$title3;
+    }
+
+    .btn-categories a {
+        text-decoration: none;
+    }
+
+    button {
+        background-color: white;
+        border: none;
+        padding: 5px;
+        // font-weight: variables.$font-bold;
+        @include mixins.box-shadow(variables.$border-color);
+    }
+}

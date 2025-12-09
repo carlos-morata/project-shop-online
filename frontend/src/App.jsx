@@ -1,7 +1,23 @@
 import React from 'react'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom';
+// Importaciones  de Layout
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+
+// Importaciones de Forms
+import RegisterUser from './components/forms/RegisterUser';
+import ContactForm from './components/forms/ContactForm';
+
+// Importaciones de Pages
+import HomePage from './pages/HomePage';
+import CategoryLanding from './pages/CategoryLanding';
+import CategoryProduct from './pages/CategoryProduct';
+import ProductDetail from './pages/ProductDetail';
+import LegalPage from './pages/LegalPage';
+import AuthorPage from './pages/AuthorPage';
+import NotFoundPage from './pages/NotFoundPage';
+import './styles/styles.scss'
+
 import './App.css'
 
 function App() {
@@ -9,7 +25,23 @@ function App() {
   return (
     <>
     <Header />
-    <Main />
+    <main className='main-container'>
+      <Routes>
+        {/* Rutas Estáticas */}
+        <Route path='/' element={<HomePage />}/> {/* Página Principal */}
+        <Route path='/legalidad' element={<LegalPage />}/> {/* Políticas Legales */}
+        <Route path='/creditos' element={<AuthorPage />}/> {/* Derechos de Autor */}
+        <Route path='/contacto' element={<ContactForm />}/> {/* Contacto */}
+
+        {/* Rutas Dinámicas */}
+        <Route path='/:genero' element={<CategoryLanding />}/> {/* Mujer, Hombre, etc */}
+        <Route path='/:gender/:category' element={<CategoryProduct />}/> {/* mujer/abrigos */}
+        <Route path='/:gender/:category/:product_id' element={<ProductDetail />}/> {/* mujer/abrigos/abrigo_1 */}
+
+        {/* Rutas Para Manejar Fallos */}
+        <Route path='/*' element={<NotFoundPage />}/> {/* NotFound */} 
+      </Routes>
+    </main>
     <Footer />
     </>
   )
