@@ -1,0 +1,82 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.home-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+
+    video {
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+    }
+
+    h1 {
+        font-size: variables.$title1;
+        text-align: center;
+        margin-top: 2px;
+    }
+
+    h1 + p {
+        @include mixins.box-shadow(variables.$border-color);
+        width: 95%;
+        font-size: variables.$text;
+        margin: 10px 0px 20px 0px;
+        padding: 3px;
+        box-sizing: variables.$border-box;
+        letter-spacing: variables.$letter-spacing;
+        text-align: center;
+    }
+
+    .gender-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        box-sizing: variables.$border-box;
+    }
+
+    .gender-section a {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .gender-section a:not(.gender-section a:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .gender-container {
+        text-align: center;
+    }
+
+
+    .gender-container figcaption {
+        color: black;
+        padding: 1px;
+        border: 1px solid variables.$border-color;
+        border-top: none;
+    }
+
+    .who-section {
+        @include mixins.box-shadow(variables.$border-color);
+        width: 95%;
+        text-align: center;
+        margin-top: 20px;
+        padding: 5px;
+        box-sizing: variables.$border-box;
+    }
+
+    .who-section h2 {
+        font-size: variables.$title2;
+        text-align: center;
+        margin-top: 2px;
+    }
+
+    .who-section p {
+        margin: 5px 0px;
+        line-height: 20px;
+    }
+}

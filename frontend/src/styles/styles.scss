@@ -1,0 +1,11 @@
+@use './views/index.scss';
+@use './views/App.scss';
+
+// Importaciones Componentes
+@use './components/Header';
+@use './components/Nav';
+@use './components/Footer';
+
+// Importaciones de Páginas
+@use './pages/HomePage';
+@use './pages/CategoryLanding';
