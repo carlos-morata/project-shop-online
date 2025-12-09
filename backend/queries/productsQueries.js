@@ -27,7 +27,11 @@ const queries = {
     // Leer un Producto por ID
     getProductsById:
         ` SELECT * FROM products
-            WHERE gender = $1 AND category = $2 AND product_id = $3;` 
+            WHERE gender = $1 AND category = $2 AND product_id = $3;` ,
+    
+    getProducts:
+        ` SELECT * FROM products
+            WHERE name ILIKE '%' || $1 || '%';`
 }
 
 module.exports = queries;
