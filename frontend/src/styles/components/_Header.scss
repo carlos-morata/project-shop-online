@@ -9,8 +9,7 @@
     position: fixed;
     top: 0;
     z-index: 999;
-    background: white;
-    box-shadow: 0px 0px 6px 2px #ddd;
+    background-color: variables.$color-black;
     box-sizing: variables.$border-box;
 
     .logo img {

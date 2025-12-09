@@ -1,0 +1,12 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.socialLinks-list {
+    display: flex;
+    column-gap: 25px;
+    margin-right: 26px;
+    
+    li {
+        list-style: none;
+    }
+}

@@ -13,10 +13,10 @@
         font-size: variables.$title1;
         text-align: center;
         margin-top: 2px;
+        color: variables.$color;
     }
 
     h1 + p {
-        @include mixins.box-shadow(variables.$border-color);
         width: 95%;
         font-size: variables.$text;
         margin: 10px 0px;
@@ -38,17 +38,19 @@
     .btn-categories h2 {
         text-align: center;
         font-size: variables.$title3;
+        color: #d4c382;
     }
 
     .btn-categories a {
         text-decoration: none;
+        width: 45%;
     }
 
     button {
-        background-color: white;
-        border: none;
-        padding: 5px;
-        // font-weight: variables.$font-bold;
-        @include mixins.box-shadow(variables.$border-color);
+        width: 100%;
+        background-color: variables.$color-black;
+        color: #fff;
+        border: 1px solid variables.$color;
+        padding: 6px;
     }
 }

@@ -30,9 +30,10 @@ const ProductDetail = () => {
     console.log("Talla elegida:", e.target.value);
   }
 
-  return <article>
+  return (
+  <>
     {product.map((item) => (
-    <section key={uuidv4()}>
+    <section key={uuidv4()} className="productDetail-container">
       <img src={item.url_image} alt={item.description} title={item.name} />
       <h1>{item.name}</h1>
       <p>{item.price} €</p>
@@ -42,11 +43,12 @@ const ProductDetail = () => {
           <option key={uuidv4()} value={size}>{size}</option>
         ))}
       </select>
-      <button>Añadir al Carrito</button>
+      <button className="add-btn">Añadir al Carrito</button>
       <p>{item.description}</p>
     </section>
     ))}
-  </article>;
+  </>
+  );
 };
 
 export default ProductDetail;
