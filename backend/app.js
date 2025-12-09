@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require('cors');
 require("dotenv").config();
 const app = express();
 const port = 3000;
 
 require('./config/db_sql');
+app.use(cors());
 app.use(express.json());
 
 // Importar Rutas de Usuarios
