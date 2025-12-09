@@ -15,9 +15,9 @@ const SearchProducts = () => {
     navigate('/');
     setSearchValue();
   }
-  return <form onSubmit={handleSubmit}>
-    <input type="text" value={searchValue} />
-    <button type="submit">
+  return <form onSubmit={handleSubmit} className="search-form">
+    <input type="text" value={searchValue} placeholder="Buscador de Productos" />
+    <button type="submit" className="search-btn">
       <FontAwesomeIcon icon={faMagnifyingGlass} />
     </button>
   </form>;

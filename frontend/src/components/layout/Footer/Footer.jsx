@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FooterLinks from './FooterLinks'
-import SocialLinks from '../Footer/FooterLinks/SocialLinks'
+import SocialLinks from './SocialLinks'
 
 
 const Footer = () => {
   return <footer className="footer-container">
+    <div className="links-container">
     <Link to='/contacto'>Contacto</Link>
-    <FooterLinks />
+    <Link to='/legalidad'>Políticas Legales</Link>
+    <Link to='/creditos'>Derechos de Autor</Link>
     <SocialLinks />
+    </div>
   </footer>;
 };
 

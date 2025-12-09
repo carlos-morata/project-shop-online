@@ -19,7 +19,7 @@ const SocialLinks = () => {
         <FontAwesomeIcon icon={faXTwitter} />
       </a>
     </li>
-  </ul>;
+  </ul>
 };
 
 export default SocialLinks;
