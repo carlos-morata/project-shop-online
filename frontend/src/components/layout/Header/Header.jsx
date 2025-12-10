@@ -14,7 +14,9 @@ const Header = () => {
     <Link to='/' className="logo">
       <img src={logo} alt="Logotipo" />
     </Link>
-    <FontAwesomeIcon icon={faUser} />
+    <Link to='/registro'>
+      <FontAwesomeIcon icon={faUser} />
+    </Link>
     <SearchProducts />
     <ShoppingCart />
   </header>;

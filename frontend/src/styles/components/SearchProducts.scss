@@ -16,6 +16,10 @@
         color: variables.$border-color;
     }
 
+    input[type="text"]:focus {
+        outline: none;
+    }
+
     .search-btn {
         background-color: transparent;
         color: #fff;
