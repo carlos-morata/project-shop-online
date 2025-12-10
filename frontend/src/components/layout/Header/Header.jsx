@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// Importaciones Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Nav from './Nav'

@@ -10,12 +10,12 @@ const SocialLinks = () => {
       </a>
     </li>
     <li className="socialLinks-item">
-      <a href="">
+      <a href="https://tiktok.com"  target="_blank">
         <FontAwesomeIcon icon={faTiktok} />
       </a>
     </li>
     <li className="socialLinks-item">
-      <a href="">
+      <a href="https://x.com" target="_blank">
         <FontAwesomeIcon icon={faXTwitter} />
       </a>
     </li>

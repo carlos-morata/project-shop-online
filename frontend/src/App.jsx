@@ -15,6 +15,7 @@ import CategoryProduct from './pages/CategoryProduct';
 import ProductDetail from './pages/ProductDetail';
 import LegalPage from './pages/LegalPage';
 import AuthorPage from './pages/AuthorPage';
+import SearchPage from './pages/SearchPage'
 import NotFoundPage from './pages/NotFoundPage';
 import './styles/styles.scss'
 
@@ -37,6 +38,7 @@ function App() {
         <Route path='/:genero' element={<CategoryLanding />}/> {/* Mujer, Hombre, etc */}
         <Route path='/:gender/:category' element={<CategoryProduct />}/> {/* mujer/abrigos */}
         <Route path='/:gender/:category/:product_id' element={<ProductDetail />}/> {/* mujer/abrigos/abrigo_1 */}
+        <Route path='/buscar/:query' element={<SearchPage />} />
 
         {/* Rutas Para Manejar Fallos */}
         <Route path='/*' element={<NotFoundPage />}/> {/* NotFound */} 
