@@ -34,6 +34,9 @@ const LoginUser = () => {
         password: formValue.password
       });
 
+      localStorage.setItem('token', response.data.user);
+      window.location.href = '/';
+
       setFormValue(response.data);
       navigate('/')
 
