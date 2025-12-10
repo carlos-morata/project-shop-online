@@ -16,6 +16,10 @@ app.use('/', userRoutes);
 const productRoutes = require('./routes/productRoutes');
 app.use('/', productRoutes);
 
+// Importar Rutas de Carrito
+const cartRoutes = require('./routes/cartRoutes');
+app.use('/', cartRoutes);
+
 app.listen(port, () => {
   console.log(`Servidor backend -> http://localhost:${port}`)
 })

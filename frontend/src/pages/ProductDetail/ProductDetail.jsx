@@ -1,16 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 const ProductDetail = () => {
+  const navigate = useNavigate();
   const { gender, category, product_id } = useParams();
   const [ product, setProduct ] = useState([]);
 
   const [selectedSizes, setSelectedSizes] = useState("");
 
-  // Si el Producto es talla única o no
-  // const uniqueSizes = product.sizes.length > 0;
+  const handleAddToCart = async (item) => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      alert("Para añadir productos, necesitas iniciar sesión.");
+      navigate('/inicioSesión');
+      return;
+    };
+
+    try {
+      const response = await axios.post('http://localhost:3000/add/cart', {
+        user_id: item.user_id,
+        product_id: item.product_id,
+        quantity: 1,
+        size: selectedSizes
+      }, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      selectedSizes(response.data);
+      alert("¡Producto añadido al carrito correctamente! 🛍️");
+    }catch (error) {
+      console.error(error);
+    }
+    }
 
   useEffect(() => {
     const fetchProductId = async () => {
@@ -42,13 +65,13 @@ const ProductDetail = () => {
         {item.sizes.map((size) => (
           <option key={uuidv4()} value={size}>{size}</option>
         ))}
-      </select>
-      <button className="add-btn">Añadir al Carrito</button>
+      </select> 
+      <button className="add-btn" onClick={() => handleAddToCart(item)}>Añadir al Carrito</button>
       <p>{item.description}</p>
     </section>
     ))}
   </>
   );
-};
+}
 
 export default ProductDetail;

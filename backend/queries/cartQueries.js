@@ -4,4 +4,4 @@ const queries = {
         VALUES ($1, $2, $3, $4);`
 }
 
-module.exports = MediaQueryListEvent;
+module.exports = queries;
