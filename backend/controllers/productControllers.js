@@ -92,12 +92,12 @@ const getProductById = async (req, res) => {
 const getProducts = async (req, res) => {
     try {
         const { query } = req.query;
-        const products = await productModels.getProductsModel(query);
-
+        
         if(!query || query.trim() === "") {
             return res.status(400).json({ message: "Debe buscar un producto real" });
         }
-        res.status(200).json(products);
+        const resultProducts = await productModels.getProductsModel(query);
+        res.status(200).json(resultProducts);
         
     } catch(error) {
         console.error(error);

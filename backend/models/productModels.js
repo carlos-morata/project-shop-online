@@ -1,4 +1,3 @@
-const { get } = require("http");
 const pool = require("../config/db_sql");
 const queries = require("../queries/productsQueries");
 
