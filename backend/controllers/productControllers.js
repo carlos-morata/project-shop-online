@@ -89,11 +89,28 @@ const getProductById = async (req, res) => {
     }
 }
 
+const getProducts = async (req, res) => {
+    try {
+        const { query } = req.query;
+        
+        if(!query || query.trim() === "") {
+            return res.status(400).json({ message: "Debe buscar un producto real" });
+        }
+        const resultProducts = await productModels.getProductsModel(query);
+        res.status(200).json(resultProducts);
+        
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+}
+
 module.exports = {
     createProduct,
     deleteProduct,
     getByGender,
     getCategoriesByGender,
     getProductsByGenAndCat,
-    getProductById
+    getProductById,
+    getProducts
 }
