@@ -1,9 +1,13 @@
 @use "../utils/variables.scss" as variables;
 @use '../utils/mixins.scss' as mixins;
 
-.burger-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #fff;
+.navbar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 }

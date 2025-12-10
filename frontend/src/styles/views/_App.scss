@@ -11,10 +11,12 @@ html {
     width: 100vw;
     min-height: 100dvh;
     box-sizing: variables.$border-box;
+    position: relative;
 
     .main-container {
         width: 100vw;
         box-sizing: variables.$border-box;
-        margin-top: 160px;
+        margin-top: 115px;
+        margin-bottom: 85px;
     }
 }

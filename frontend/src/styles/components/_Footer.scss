@@ -7,6 +7,10 @@
     padding: 10px;
     border-top: 1px solid variables.$border-color;
     box-sizing: variables.$border-box;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    background-color: variables.$color-black;
 
     .links-container {
         width: 100%;

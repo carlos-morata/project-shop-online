@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer'
 
 // Importaciones de Forms
 import RegisterUser from './components/forms/RegisterUser';
+import LoginUser from './components/forms/LoginUser';
 import ContactForm from './components/forms/ContactForm';
 
 // Importaciones de Pages
@@ -32,6 +33,9 @@ function App() {
         <Route path='/' element={<HomePage />}/> {/* Página Principal */}
         <Route path='/legalidad' element={<LegalPage />}/> {/* Políticas Legales */}
         <Route path='/creditos' element={<AuthorPage />}/> {/* Derechos de Autor */}
+        <Route path='/creditos' element={<AuthorPage />}/> {/* Derechos de Autor */}
+        <Route path='/registro' element={<RegisterUser />}/> {/* Registro de Usuario */}
+        <Route path='/inicioSesión' element={<LoginUser />}/> {/* Inicio Sesión de Usuario */}
         <Route path='/contacto' element={<ContactForm />}/> {/* Contacto */}
 
         {/* Rutas Dinámicas */}
