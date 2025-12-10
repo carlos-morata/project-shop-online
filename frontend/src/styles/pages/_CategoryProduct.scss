@@ -3,15 +3,34 @@
 
 .products-container {
     width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+    box-sizing: variables.$border-box;
 
     h1 {
         font-size: variables.$title1;
         text-align: center;
         color: variables.$color;
+    }
+
+    a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .product-article {
+        width: 98%;
+        margin-bottom: 15px;
+    }
+
+    .product-article h2 {
+        color: variables.$color;
+    }
+
+    .product-article span {
+        color: #fff;
+    }
+
+    img {
+        width: 100%;
     }
 }
