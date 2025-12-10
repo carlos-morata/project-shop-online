@@ -1,0 +1,29 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.footer-container {
+    width: 100vw;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid variables.$border-color;
+    box-sizing: variables.$border-box;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    background-color: variables.$color-black;
+
+    .links-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        row-gap: 10px;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    a {
+        width: 45%;
+        text-decoration: none;
+        color: #cfbb72;
+    }
+}

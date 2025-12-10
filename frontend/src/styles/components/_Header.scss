@@ -1,0 +1,32 @@
+@use "../utils/variables.scss" as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.header-container {
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 1px solid variables.$border-color;
+
+    .logo img {
+        width: 60px;
+    }
+
+    .right-header {
+        display: flex;
+        justify-content: end;
+        column-gap: 8px;
+        width: 58%;
+    }
+
+    .links {
+        color: variables.$color;
+    }
+}
