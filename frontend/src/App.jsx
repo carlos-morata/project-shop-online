@@ -18,6 +18,8 @@ import LegalPage from './pages/LegalPage';
 import AuthorPage from './pages/AuthorPage';
 import SearchPage from './pages/SearchPage'
 import NotFoundPage from './pages/NotFoundPage';
+import UserPage from './pages/UserPage'
+
 import './styles/styles.scss'
 
 import './App.css'
@@ -36,6 +38,7 @@ function App() {
         <Route path='/creditos' element={<AuthorPage />}/> {/* Derechos de Autor */}
         <Route path='/registro' element={<RegisterUser />}/> {/* Registro de Usuario */}
         <Route path='/inicioSesión' element={<LoginUser />}/> {/* Inicio Sesión de Usuario */}
+        <Route path='/user' element={<UserPage />}/> {/* Panel de Usuario */}
         <Route path='/contacto' element={<ContactForm />}/> {/* Contacto */}
 
         {/* Rutas Dinámicas */}

@@ -60,7 +60,7 @@ const getCategoriesByGender = async (req, res) => {
 const getProductsByGenAndCat = async (req, res) => {
     try {
         const { gender, category } = req.params;        
-        const products = await productModels.getProductsByGenAndCatModel(gender, category)
+        const products = await productModels.getProductsByGenAndCatModel(gender, category);
 
         if(!products || !products.length === 0) {
             return res.status(400).json({ message: "No se encuentran productos"});

@@ -22,7 +22,7 @@ const SearchProducts = () => {
   return <form className="search-form" onSubmit={handleSubmit}>
           <input type="text" value={searchValue} onChange={handleChange} placeholder="Buscador de Productos" />
           <button type="submit" className="search-btn">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="links" />
           </button>
         </form>;
 };

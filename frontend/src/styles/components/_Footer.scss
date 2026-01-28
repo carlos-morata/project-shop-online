@@ -5,12 +5,12 @@
     width: 100vw;
     margin-top: 20px;
     padding: 10px;
-    border-top: 1px solid variables.$border-color;
-    box-sizing: variables.$border-box;
     position: absolute;
     bottom: 0;
     z-index: 999;
-    background-color: variables.$color-black;
+    box-sizing: variables.$border-box;
+    background-color: variables.$background-white;
+    border-top: 2px solid black;
 
     .links-container {
         width: 100%;
@@ -24,6 +24,5 @@
     a {
         width: 45%;
         text-decoration: none;
-        color: #cfbb72;
     }
 }

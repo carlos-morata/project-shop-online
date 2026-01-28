@@ -13,7 +13,7 @@
         font-size: variables.$title1;
         text-align: center;
         margin-top: 2px;
-        color: variables.$color;
+        color: variables.$primary;
     }
 
     h1 + p {
@@ -52,9 +52,9 @@
 
     button {
         width: 100%;
-        background-color: variables.$color-black;
+        background-color: variables.$text-main;
         color: #fff;
-        border: 1px solid variables.$color;
+        border: 1px solid variables.$background-dark;
         padding: 6px;
     }
 }

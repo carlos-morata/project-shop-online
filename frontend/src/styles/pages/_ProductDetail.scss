@@ -16,7 +16,7 @@
         align-self: flex-start;
         font-size: variables.$title2;
         margin: 2px 0px 0px 5px;
-        color: variables.$color;
+        color: variables.$background-dark;
     }
 
     h1 + p {
@@ -42,7 +42,7 @@
         letter-spacing: variables.$letter-spacing;
         font-weight: variables.$font-bold;
         font-size: 18px;
-        box-shadow: 0px 0px 4px 1px variables.$color;
+        box-shadow: 0px 0px 4px 1px variables.$text-muted;
     }
 
     .add-btn + p {

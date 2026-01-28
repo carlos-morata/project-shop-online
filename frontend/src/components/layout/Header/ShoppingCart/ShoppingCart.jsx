@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 const ShoppingCart = () => {
-  return <div>
-    <FontAwesomeIcon icon={faShoppingCart} />
-  </div>;
+  return <>
+    <FontAwesomeIcon icon={faShoppingBag} className="links" />
+  </>;
 };
 
 export default ShoppingCart;

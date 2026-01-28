@@ -3,18 +3,19 @@
 
 .search-form {
     box-sizing: variables.$border-box;
-    margin: 0 auto;
+    // margin: 0 auto;
 
     input {
-        background-color: variables.$color-black;
+        background-color: variables.$primary;
         color: #fff;
-        border: 1px solid variables.$color;
+        border: 1px solid variables.$primary;
         padding: 5px;
         border-radius: 10px;
+        display: none;
     }
 
     input[type="text"]::placeholder {
-        color: variables.$border-color;
+        color: variables.$text-main;
     }
 
     input[type="text"]:focus {

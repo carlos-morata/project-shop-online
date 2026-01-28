@@ -11,7 +11,8 @@ router.delete('/api/product/:product_id', productControllers.deleteProduct);
 // http://localhost:3000/genero/mujer
 router.get('/genero/:gender', productControllers.getByGender);
 
-// http://localhost:3000/categorias
+// http://localhost:3000/categorias/mujer
+// http://localhost:3000/categorias/hombre
 router.get('/categorias/:gender', productControllers.getCategoriesByGender);
 
 // http://localhost:3000/mujer/abrigos
