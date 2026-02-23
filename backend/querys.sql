@@ -18,16 +18,18 @@
 -- 	FOREIGN KEY(user_id) REFERENCES users(user_id)
 -- );
 
+-- CREATE TYPE gender_type AS ENUM ('hombre', 'mujer');
 -- TABLA PRODUCTOS
 -- CREATE TABLE products (
--- 	product_id SERIAL PRIMARY KEY,
--- 	url_image VARCHAR(300),
--- 	name VARCHAR(100) NOT NULL,
--- 	price DECIMAL(10, 2) NOT NULL,
--- 	description VARCHAR(250),
--- 	sizes VARCHAR(30),
--- 	category VARCHAR(50),
--- 	stock INT NOT NULL DEFAULT 0
+--     product_id SERIAL PRIMARY KEY,
+--     url_image VARCHAR(300),
+--     name VARCHAR(100) NOT NULL,
+--     price DECIMAL(10, 2) NOT NULL,
+--     description VARCHAR(250),
+--     sizes VARCHAR(30),
+--     category VARCHAR(50),
+--     gender gender_type NOT NULL,
+--     stock INT NOT NULL DEFAULT 0
 -- );
 
 -- TABLA
