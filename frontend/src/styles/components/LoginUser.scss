@@ -9,7 +9,7 @@
     h1 {
         text-align: center;
         margin-bottom: 10px;
-        color: variables.$color;
+        color: variables.$primary;
         letter-spacing: variables.$letter-spacing;
         font-size: variables.$title1;
     }
@@ -33,13 +33,13 @@
     form input {
         width: 80%;
         padding: 4px;
-        background-color: variables.$color-black;
-        border: 1px solid variables.$color;
+        background-color: variables.$primary;
+        border: 1px solid variables.$background-dark;
         color: #fff;
     }
 
     form input::placeholder {
-        color: variables.$border-color;
+        color: variables.$background-light;
     }
 
     form input:focus {
@@ -50,8 +50,8 @@
     form button {
         width: 75%;
         margin-top: 15px;
-        background-color: variables.$color;
-        color: variables.$color-black;
+        background-color: variables.$text-main;
+        color: variables.$background-light;
         border: none;
         padding: 6px;
     }
@@ -65,7 +65,7 @@
         display: block;
         text-align: center;
         text-decoration: underline;
-        color: variables.$color;
+        color: variables.$text-main;
         margin-top: 2px;
     }
 }

@@ -15,7 +15,7 @@ pool.connect()
         console.log('✅ Conexión a la BBDD establecida');
     }).catch(err => {
         console.error('❌ Error en conexión a la BBDD', err)
-    })
+    });
 
 
 module.exports = pool;

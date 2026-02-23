@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
-import sectionWomen from '../../assets/images/seccionMujer.png';
-import sectionMen from '../../assets/images/seccionHombre.png';
+import sectionImgWomen from '../../../public/images/SeccionPrincipalMujer.png';
+import sectionImgMen from '../../assets/images/seccionHombre.png';
 
 
 const CategoryLanding = () => {
@@ -23,22 +23,28 @@ const CategoryLanding = () => {
     fetchCategories();
   }, [gender]);
 
-  const isWoman = gender?.toLowerCase() === 'mujer';
-  const heroImage = isWoman 
-    ? sectionWomen
-    : sectionMen;
+  // Texto moda femenina / masculina
+  // const textFemale = "femenina";
+  // const textMale = "masculina";
+  const isWomen = gender?.toLowerCase() === 'mujer';
+  // const textGenre = textIsWomen ?  textFemale : textMale;
+
+  // Imagen sección mujer / hombre
+  const sectionImg = isWomen ? sectionImgWomen : sectionImgMen;
     
-  return (<section className="gender-container">
-    <img src={heroImage} alt={`Imagen para Sección ${gender}` }/>
-    <h1>Sección {gender}</h1>
-    <p>Descubre la mejor moda para {gender}.</p>
+  return (
+    <section className="gender-container">
+      <section className="section-genre-top">
+      <img src={sectionImg} alt="Imagen principal sección" />
+      <h1>Moda {gender}</h1>
+      <p>Descubre una selección editorial de piezas atemporales diseñadas para la {gender} contemporánea.</p>
+      </section>
 
     <section className="btn-categories">
-      <h2>Categorías de Productos</h2>
-
-      {categories.map((item, index) => (
+      <h2>Categorías</h2>
+      { categories.map((item, index) => (
         <Link key={index} to={`/${gender}/${item.category.toLowerCase()}`}>
-          <button key={index}>{item.category}</button>
+          {item.category}
         </Link>
       ))}
     </section>

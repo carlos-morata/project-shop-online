@@ -6,7 +6,7 @@ import { faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import Nav from './Nav'
 import SearchProducts from '../../forms/SearchProducts'
 import ShoppingCart from './ShoppingCart'
-import logo from '../../../assets/images/logoTienda.png'
+import logo from '../../../../public/images/Logo Luxe.png'
 
 const Header = () => {
   const [ isLogged, setIsLogged ] = useState(false);
@@ -26,10 +26,13 @@ const Header = () => {
     <Nav />
     <Link to='/' className="logo">
       <img src={logo} alt="Logotipo" />
+      <h1>Luxe</h1>
     </Link>
     <div className="right-header">
+      <SearchProducts />
+      <ShoppingCart />
       {isLogged ? (
-    <Link to='/inicioSesión' className="links">
+    <Link to='/user' className="links">
       <FontAwesomeIcon icon={faUser} />
     </Link>
       ) : (
@@ -37,9 +40,7 @@ const Header = () => {
       <FontAwesomeIcon icon={faUserPlus} />
     </Link>
       )}
-    <ShoppingCart />
     </div>
-    <SearchProducts />
   </header>;
 };
 

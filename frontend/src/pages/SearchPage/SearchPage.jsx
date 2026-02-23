@@ -26,7 +26,7 @@ const SearchPage = () => {
   return <section className="search-container">
     <h1>Resultados de Búsqueda {query}</h1>
 
-    {results.length === 0 && <p>No se han encontrado productos.</p>}
+    {results.length === 0 && <p>Cargando...</p>}
 
     {results.map((item) => (
       <article key={item.product_id} className="product-article">

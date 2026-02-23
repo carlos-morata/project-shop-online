@@ -15,12 +15,12 @@ const ProductDetail = () => {
 
     if (!token) {
       alert("Para añadir productos, necesitas iniciar sesión.");
-      navigate('/inicioSesión');
+      navigate('/registro');
       return;
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/add/cart', {
+      const response = await axios.post('http://localhost:3000/add', {
         user_id: item.user_id,
         product_id: item.product_id,
         quantity: 1,
@@ -29,7 +29,7 @@ const ProductDetail = () => {
         headers: { Authorization: `Bearer ${token}` }
       })
       selectedSizes(response.data);
-      alert("¡Producto añadido al carrito correctamente! 🛍️");
+      alert("¡Producto añadido al carrito correctamente!s");
     }catch (error) {
       console.error(error);
     }
@@ -50,7 +50,6 @@ const ProductDetail = () => {
   // Manejar cambio
   const handleSizeChange = (e) => {
     setSelectedSizes(e.target.value);
-    console.log("Talla elegida:", e.target.value);
   }
 
   return (

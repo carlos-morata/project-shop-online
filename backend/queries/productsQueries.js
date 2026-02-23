@@ -17,7 +17,7 @@ const queries = {
     // Leer Categoría por Género 
     getCategoriesByGender: 
         ` SELECT DISTINCT category FROM products
-            WHERE gender = $1`,
+            WHERE LOWER(gender) = $1`,
     
     // Leer Productos Por Categoría y Género
     getProductsByGenderAndCategory: 
@@ -27,7 +27,7 @@ const queries = {
     // Leer un Producto por ID
     getProductsById:
         ` SELECT * FROM products
-            WHERE gender = $1 AND category = $2 AND product_id = $3;` ,
+            WHERE LOWER(gender) = $1 AND LOWER(category) = $2 AND product_id = $3;` ,
     
     getProducts:
         ` SELECT * FROM products
