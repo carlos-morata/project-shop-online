@@ -1,6 +1,18 @@
 @use "../utils/variables.scss" as variables;
 @use '../utils/mixins.scss' as mixins;
 
+// %logo {
+//     display: flex;
+//     align-items: center;
+//     text-decoration: none;
+// }
+
+// %title-logo {
+//     font-size: variables.$text;
+//     text-transform: uppercase;
+//     color: variables.$text-main;
+// }
+
 .header-container {
     display: flex;
     justify-content: space-evenly;
@@ -13,21 +25,9 @@
     box-sizing: border-box;
 
     .logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
+        @include mixins.logo-style;
     }
-
-    .logo img {
-        width: 50px;
-    }
-
-    .logo h1 {
-        font-size: variables.$text;
-        text-transform: uppercase;
-        color: variables.$text-main;
-    }
-
+    
     .right-header {
         display: flex;
         justify-content: end;

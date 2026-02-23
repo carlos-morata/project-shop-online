@@ -30,6 +30,7 @@ const Header = () => {
     </Link>
     <div className="right-header">
       <SearchProducts />
+      <ShoppingCart />
       {isLogged ? (
     <Link to='/user' className="links">
       <FontAwesomeIcon icon={faUser} />
@@ -39,7 +40,6 @@ const Header = () => {
       <FontAwesomeIcon icon={faUserPlus} />
     </Link>
       )}
-    <ShoppingCart />
     </div>
   </header>;
 };

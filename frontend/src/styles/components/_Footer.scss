@@ -3,26 +3,27 @@
 
 .footer-container {
     width: 100vw;
-    margin-top: 20px;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
-    z-index: 999;
     box-sizing: variables.$border-box;
     background-color: variables.$background-white;
-    border-top: 2px solid black;
+    margin-top: 2.5rem;
 
-    .links-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        row-gap: 10px;
-        box-sizing: border-box;
-        flex-wrap: wrap;
+    .logo {
+        @include mixins.logo-style;
     }
 
-    a {
-        width: 45%;
-        text-decoration: none;
+    .logo + p {
+        width: 90%;
+        margin: 5px 0px 15px 12px;
+        line-height: 20px;
+        color: variables.$text-muted;
+        font-size: 1em;
+    }
+
+    .copy-footer {
+        display: inline-block;
+        text-align: center;
+        font-size: variables.$text2;
+        color: variables.$text-muted;
     }
 }

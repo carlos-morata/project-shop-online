@@ -27,13 +27,15 @@
     }
 
     img {
-        width: 98%;
+        width: 90%;
+        border-radius: variables.$border-radius2;
     }
 
     .btn-categories {
         width: 95%;
         padding: 10px;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
         gap: 10px;
