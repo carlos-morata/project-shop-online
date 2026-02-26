@@ -34,10 +34,10 @@ const CategoryLanding = () => {
     
   return (
     <section className="gender-container">
-      <section className="section-genre-top">
-      <img src={sectionImg} alt="Imagen principal sección" />
-      <h2>Moda {gender}</h2>
-      <p>Descubre una selección editorial de piezas atemporales diseñadas para la {gender} contemporánea.</p>
+      <section className="section-gender-top">
+          <img src={sectionImg} alt="Imagen principal sección" className="gender-main-img" />
+        <h2 className="gender-title">Moda {gender}</h2>
+        <p>Descubre una selección editorial de piezas atemporales diseñadas para la {gender} contemporánea.</p>
       </section>
 
     <section className="btn-categories">
