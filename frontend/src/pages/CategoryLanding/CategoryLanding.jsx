@@ -36,12 +36,12 @@ const CategoryLanding = () => {
     <section className="gender-container">
       <section className="section-genre-top">
       <img src={sectionImg} alt="Imagen principal sección" />
-      <h1>Moda {gender}</h1>
+      <h2>Moda {gender}</h2>
       <p>Descubre una selección editorial de piezas atemporales diseñadas para la {gender} contemporánea.</p>
       </section>
 
     <section className="btn-categories">
-      <h2>Categorías</h2>
+      <h3>Categorías</h3>
       { categories.map((item, index) => (
         <Link key={index} to={`/${gender}/${item.category.toLowerCase()}`}>
           {item.category}

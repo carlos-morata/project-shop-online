@@ -9,14 +9,14 @@
     align-items: center;
     box-sizing: border-box;
 
-    h1 {
+    h2 {
         font-size: variables.$title1;
         text-align: center;
         margin-top: 2px;
         color: variables.$primary;
     }
 
-    h1 + p {
+    h2 + p {
         width: 95%;
         font-size: variables.$text;
         margin: 10px 0px;
