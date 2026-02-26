@@ -3,12 +3,12 @@ const productModels = require("../models/productModels");
 // Crear Producto
 const createProduct = async(req, res) => {
     try {
-        const { url_image, name, price, description, sizes, category, stock, gender } = req.body;
+        const { url_image, name, price, description, sizes, category, gender, stock } = req.body;
 
-        if(!url_image || !name || !price || !description || !sizes || !category || !stock || !gender) {
+        if(!url_image || !name || !price || !description || !sizes || !category || !gender || !stock) {
             return res.status(400).json({ message: "Faltan datos obligatorios para crear un producto." });
         }
-        const newProduct = await productModels.createProductModel(url_image, name, price, description, sizes, category, stock, gender);
+        const newProduct = await productModels.createProductModel(url_image, name, price, description, sizes, category, gender, stock);
         res.status(201).json({ message: "Producto Creado!", product: newProduct });
     } catch(error) {
        res.status(500).json({ message: "Error en el servidor", error});
