@@ -2,12 +2,12 @@ const pool = require("../config/db_sql");
 const queries = require("../queries/productsQueries");
 
 // Creación de Productos
-const createProductModel = async (url_image, name, price, description, sizes, category, stock, gender) => {
+const createProductModel = async (url_image, name, price, description, sizes, category, gender, stock) => {
     try {
-        if(!name || !price || !sizes || !category || !stock || !gender) {
+        if(!name || !price || !sizes || !category || !gender || !stock) {
             throw new Error('Nombre, precio, tallas, categoría y stock son obligatorios');
         }
-        const resultCreateProduct = await pool.query(queries.insertProduct, [ url_image, name, price, description, sizes, category, stock, gender ]);
+        const resultCreateProduct = await pool.query(queries.insertProduct, [ url_image, name, price, description, sizes, category, gender, stock ]);
         return resultCreateProduct
     } catch(error) {
         console.error('Error al Crear Producto: ', error.message);
